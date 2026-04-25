@@ -1,0 +1,29 @@
+<nav class="nav">
+  <div class="left-links">
+    <a href="/">Home</a>
+    <a href="/">Books</a>
+  </div>
+  <div class="right-links">
+    <a href="/login" class="login-btn">Login</a>
+  </div>
+</nav>
+
+<style>
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    background: #fff;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .left-links, .right-links { 
+    display: flex; 
+    gap: 20px;
+     }
+  a { 
+    text-decoration: none;
+     color: #409274;
+      font-weight: 900; }
+  .login-btn { color: #409274; }
+</style>

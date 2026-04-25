@@ -1,0 +1,33 @@
+---
+import Navbar from '../components/navbar.astro';
+---
+<html>
+  <body>
+    <Navbar />
+    <main style="max-width: 500px; margin: 50px auto; font-family: sans-serif;">
+      <h1>Checkout</h1>
+      <div id="selection" style="background: #dcdcdc; padding: 20px; border-radius: 8px;">
+        </div>
+      <button style="width: 100%; margin-top: 20px; padding: 12px; background: gray; color: white; border: none; border-radius: 5px; cursor: pointer;">
+        Complete Order
+      </button>
+    </main>
+
+    <script>
+      import books from '../data/books.json';
+      const params = new URLSearchParams(window.location.search);
+      const id = params.get('id');
+      const book = books.find(b => b.id === id);
+      
+      const div = document.getElementById('selection');
+      if (book) {
+        div.innerHTML = `
+          <p>You're buying: <strong>${book.name}</strong></p>
+          <p>Total: <strong>$${book.price}</strong></p>
+        `;
+      } else {
+        div.innerHTML = "<p>No book selected.</p>";
+      }
+    </script>
+  </body>
+</html>

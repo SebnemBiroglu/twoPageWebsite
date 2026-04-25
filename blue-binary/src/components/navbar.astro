@@ -13,17 +13,28 @@
     display: flex;
     justify-content: space-between;
     padding: 1rem 2rem;
-    background: #fff;
-    border-bottom: 1px solid #ddd;
+    background: #ffffff;
+    border-bottom: 1px solid #dddddd;
+    font-family: sans-serif; 
   }
   
   .left-links, .right-links { 
     display: flex; 
     gap: 20px;
-     }
+    align-items: center;
+  }
+
   a { 
     text-decoration: none;
-     color: #409274;
-      font-weight: 900; }
-  .login-btn { color: #409274; }
+    color: #409274;
+    font-weight: 900; 
+    transition: opacity 0.2s;
+  }
+  a:hover {
+    opacity: 0.7;
+  }
+
+  .login-btn { 
+    color: #409274; 
+  }
 </style>

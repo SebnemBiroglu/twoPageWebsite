@@ -1,20 +1,22 @@
 ---
 import Navbar from '../components/navbar.astro';
+import books from '../data/books.json';
 ---
 <html>
   <body>
     <Navbar />
-    <main style="max-width: 500px; margin: 50px auto; font-family: sans-serif;">
+    <main class="container">
       <h1>Checkout</h1>
-      <div id="selection" style="background: #dcdcdc; padding: 20px; border-radius: 8px;">
-        </div>
-      <button style="width: 100%; margin-top: 20px; padding: 12px; background: gray; color: white; border: none; border-radius: 5px; cursor: pointer;">
+      <div id="selection" class="card">
+        <p>Loading your selection...</p>
+      </div>
+
+      <button class="cart-btn checkout-btn">
         Complete Order
       </button>
     </main>
 
-    <script>
-      import books from '../data/books.json';
+    <script define:vars={{ books }}>
       const params = new URLSearchParams(window.location.search);
       const id = params.get('id');
       const book = books.find(b => b.id === id);
@@ -22,12 +24,63 @@ import Navbar from '../components/navbar.astro';
       const div = document.getElementById('selection');
       if (book) {
         div.innerHTML = `
-          <p>You're buying: <strong>${book.name}</strong></p>
-          <p>Total: <strong>$${book.price}</strong></p>
+          <p class="info">You're buying:</p>
+          <h3>${book.name}</h3>
+          <p class="price">$${book.price}</p>
         `;
       } else {
         div.innerHTML = "<p>No book selected.</p>";
       }
     </script>
+
+    <style>
+      .container { 
+        max-width: 900px; 
+        margin: 40px auto; 
+        padding: 0 20px; 
+        font-family: sans-serif;
+      }
+
+      .card { 
+        border: 1px solid #eeeeee; 
+        padding: 20px; 
+        border-radius: 10px; 
+        text-align: center;
+        background: #fafafa;
+        max-width: 500px;
+        margin: 0 auto;
+      }
+
+      h1 {
+        text-align: center;
+        margin-bottom: 30px;
+      }
+
+
+      .price { 
+        font-weight: bold; 
+        margin: 10px 0; 
+        font-size: 1.2rem;
+      }
+
+      .cart-btn { 
+        display: block; 
+        background: #409274; 
+        color: #ffffff; 
+        text-decoration: none; 
+        padding: 12px; 
+        border-radius: 5px;
+        font-size: 1rem;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+        max-width: 500px;
+        margin: 20px auto;
+      }
+
+      .cart-btn:hover {
+        opacity: 0.9;
+      }
+    </style>
   </body>
 </html>

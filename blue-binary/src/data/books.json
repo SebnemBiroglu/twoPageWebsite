@@ -1,8 +1,8 @@
  [
-  { "id": "1", "name": "Atomic Habits", "info": "Build good habits & break bad ones.", "price": "15.00" },
-  { "id": "2", "name": "Show Your Work!", "info": "10 ways to share your creativity.", "price": "12.00" },
-  { "id": "3", "name": "Deep Work", "info": "Rules for focused success.", "price": "18.00" },
+  { "id": "1", "name": "Project Hail Mary", "info": "Epic story of redemption, discovery, and cool speculative sci-fi", "price": "15.00" },
+  { "id": "2", "name": "Milk and Honey", "info": "Deals with a different pain. Heals a different heartache. ", "price": "12.00" },
+  { "id": "3", "name": "Who Was Harvey Milk?", "info": "Harvey Milk advocated for equal rights.", "price": "18.00" },
   { "id": "4", "name": "Design of Everyday Things", "info": "The psychology of design.", "price": "20.00" },
-  { "id": "5", "name": "Steal Like an Artist", "info": "Unlock your creativity.", "price": "10.00" },
+  { "id": "5", "name": "Crusaders", "info": " major new history of the Crusades with an unprecedented wide scope", "price": "10.00" },
   { "id": "6", "name": "Don't Make Me Think", "info": "Common sense approach to Web UX.", "price": "25.00" }
 ]
